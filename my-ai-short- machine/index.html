@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My AI Shorts Machine</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0f172a;
+      color: white;
+      text-align: center;
+      padding: 50px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    button {
+      background: #10b981;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin: 10px;
+    }
+    input {
+      padding: 10px;
+      width: 70%;
+      border-radius: 8px;
+      border: none;
+      margin: 10px;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      background: #1e293b;
+      margin: 5px auto;
+      padding: 10px;
+      border-radius: 8px;
+      max-width: 600px;
+      text-align: left;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🤖 My AI Shorts Machine</h1>
+    <p>Add your YouTube or Facebook channel link. AI will do the rest!</p>
+    
+    <input type="text" id="channelLink" placeholder="Paste channel or video link here"/>
+    <button onclick="addChannel()">Add Channel</button>
+
+    <button onclick="toggleMachine()">AI Machine: OFF</button>
+
+    <h2>Your Channels</h2>
+    <ul id="channelList"></ul>
+  </div>
+
+  <script>
+    function addChannel() {
+      const link = document.getElementById("channelLink").value.trim();
+      if (!link) {
+        alert("Please enter a valid link");
+        return;
+      }
+
+      const list = document.getElementById("channelList");
+      const li = document.createElement("li");
+      li.textContent = link;
+      list.appendChild(li);
+
+      document.getElementById("channelLink").value = "";
+      alert("✅ Channel added successfully!");
+    }
+
+    function toggleMachine() {
+      alert("AI Machine is being set up... Stay tuned for next steps!");
+    }
+  </script>
+</body>
+</html>
